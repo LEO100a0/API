@@ -31,3 +31,12 @@ def obtener_datos():
     datos = [{"id": r[0], "valor": r[1]} for r in rows]
 
     return {"datos": datos}
+    
+n = len(datos)
+    for i in range(n):
+        for j in range(0, n - i - 1):
+            if datos[j]["valor"] > datos[j + 1]["valor"]:
+                # Intercambiar
+                datos[j], datos[j + 1] = datos[j + 1], datos[j]
+
+    return {"datos": datos}
